@@ -19,11 +19,11 @@ import { VideoTutorial } from '../../models/video-tutorial.model';
         <div class="video-container">
           <iframe
             [src]="safeYoutubeUrl()"
-            title="YouTube video player for {{ v.title }}"
-            frameborder="0"
-            allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
-            allowfullscreen
             loading="lazy"
+            style="border:0;position:absolute;top:0;height:100%;width:100%;"
+            allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
+            allowfullscreen="true"
+            title="Video player for {{ v.title }}"
           ></iframe>
         </div>
       </article>
