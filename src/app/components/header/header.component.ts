@@ -2,10 +2,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 
 @Component({
-  selector: 'app-header',
-  standalone: true,
-  imports: [NgOptimizedImage],
-  template: `
+    selector: 'app-header',
+    imports: [NgOptimizedImage],
+    template: `
 <header>
   <a href="/">
     <img
@@ -20,7 +19,7 @@ import { NgOptimizedImage } from '@angular/common';
   <span class="tagline">Home of Drive, Iron, and Putt Align</span>
 </header>
   `,
-  styles: `
+    styles: `
     header {
       display: flex;
       justify-content: space-between;
@@ -34,6 +33,6 @@ import { NgOptimizedImage } from '@angular/common';
       color: var(--primary-green);
     }
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent {}

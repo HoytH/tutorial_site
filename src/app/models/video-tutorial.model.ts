@@ -7,4 +7,6 @@ export interface VideoTutorial {
 
   /** A brief description of the video content. */
   description: string;
+  /** Optional key bullet points shown with the video. */
+  keyPoints?: string[];
 }

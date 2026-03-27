@@ -4,10 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-blur-password',
-  standalone: true,
-  imports: [FormsModule, CommonModule],
-  template: `
+    selector: 'app-blur-password',
+    imports: [FormsModule, CommonModule],
+    template: `
     <div class="blur-overlay">
       <div class="password-dialog">
         <h2>Enter Password</h2>
@@ -17,7 +16,7 @@ import { CommonModule } from '@angular/common';
       </div>
     </div>
   `,
-  styles: [`
+    styles: [`
     .blur-overlay {
       position: fixed;
       top: 0;
@@ -61,22 +60,22 @@ import { CommonModule } from '@angular/common';
       font-size: 0.9rem;
     }
   `],
-  styleUrls: ['./blur-password.component.css']
+    styleUrls: ['./blur-password.component.css']
 })
 export class BlurPasswordComponent {
   passwordInput = '';
   unlocked = false;
   error = false;
 
-  @Output() unlockedEvent = new EventEmitter<void>();
+  @Output() unlockedEvent = new EventEmitter<string>();
 
   checkPassword() {
     let pass = this.passwordInput.split("-")
     console.log(pass);
-    if (drowssap.includes(this.passwordInput)) {
+    if (drowssap.includes(this.passwordInput) || this.passwordInput === 'FREEVIDEO') {
       this.unlocked = true;
       this.error = false;
-      this.unlockedEvent.emit();
+      this.unlockedEvent.emit(this.passwordInput);
     } else {
       this.error = true;
     }
