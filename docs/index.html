@@ -6,8 +6,21 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <script>
+    // Restore URL after GitHub Pages 404 redirect
+    (function () {
+      var redirect = sessionStorage.getItem('ggg_redirect');
+      if (redirect) {
+        sessionStorage.removeItem('ggg_redirect');
+        var url = new URL(redirect);
+        if (url.pathname !== '/') {
+          history.replaceState(null, '', url.pathname + url.search + url.hash);
+        }
+      }
+    })();
+  </script>
 <style>:root{--primary-green:#2c5f2d;--light-green:#97bc62;--background-color:#f7f9f7;--text-color:#333333;--white:#ffffff;--border-radius:8px;--box-shadow:0 4px 8px rgba(0, 0, 0, .05)}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%}body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol;background-color:var(--background-color);color:var(--text-color);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}</style><link rel="stylesheet" href="styles-SGDNOPVW.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-SGDNOPVW.css"></noscript></head>
 <body>
   <app-root></app-root>
-<link rel="modulepreload" href="chunk-HXKD2PIZ.js"><script src="polyfills-5CFQRCPP.js" type="module"></script><script src="main-BLQVNWRH.js" type="module"></script></body>
+<link rel="modulepreload" href="chunk-PI6JE55Y.js"><link rel="modulepreload" href="chunk-SCZQ6WTG.js"><script src="polyfills-5CFQRCPP.js" type="module"></script><script src="main-OJVI5NL4.js" type="module"></script></body>
 </html>
