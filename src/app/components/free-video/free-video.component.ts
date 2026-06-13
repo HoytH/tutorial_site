@@ -85,6 +85,11 @@ import { VideoTutorial } from '../../models/video-tutorial.model';
               <p class="quote">"Always wished that there was something that would work with my driver so I was glad when this popped up. Sticks well to the driver face. You really can’t be sure your alignment is correct unless you are using this as the curved face on a driver, plus the fact that we stand 90 degrees to the target line, really can distort perception of where you’re aimed. Highly recommend."</p>
               <p class="author">- David D.</p>
             </div>
+            <div class="testimonial-card">
+              <div class="stars">⭐⭐⭐⭐⭐</div>
+              <p class="quote">"What a great product! The Drive Align exceeded my expectations in every way. The customer service was outstanding from start to finish: quick shipping, clear instructions, and they even followed up to make sure I was getting the results I wanted. What really impressed me was how quickly the Drive Align revealed issues with my setup. After the first session, it showed me that my driver face was slightly closed at address. The visual feedback is incredibly precise and helped me see and feel a square driver face at address and impact. The results were immediate. After that single session, my drives became noticeably more consistent. It's a great tool to use anytime but especially warming up before a round to ensure you are starting from a good position."</p>
+              <p class="author">- Matt G.</p>
+            </div>
           </div>
         </section>
 

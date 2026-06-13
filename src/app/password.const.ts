@@ -1,1 +1,1 @@
-export const PAGE_PASSWORD = 'gentleGator2025';
+export const FREE_VIDEO_PASSWORD = 'Spring26';

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { PAGE_PASSWORD } from '../../password.const';
+import { FREE_VIDEO_PASSWORD } from '../../password.const';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
@@ -72,7 +72,7 @@ export class BlurPasswordComponent {
   checkPassword() {
     let pass = this.passwordInput.split("-")
     console.log(pass);
-    if (drowssap.includes(this.passwordInput) || this.passwordInput === 'FREEVIDEO') {
+    if (drowssap.includes(this.passwordInput) || this.passwordInput === FREE_VIDEO_PASSWORD) {
       this.unlocked = true;
       this.error = false;
       this.unlockedEvent.emit(this.passwordInput);

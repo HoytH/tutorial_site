@@ -5,6 +5,7 @@ import { FreeVideoComponent } from '../../components/free-video/free-video.compo
 import { ProductCardComponent } from '../../components/product-card/product-card.component';
 import { BlurPasswordComponent } from '../../components/blur-password/blur-password.component';
 import { CommonModule } from '@angular/common';
+import { FREE_VIDEO_PASSWORD } from 'src/app/password.const';
 
 @Component({
     selector: 'app-home',
@@ -84,9 +85,9 @@ export class HomeComponent {
   protected freeVideoOnly = false;
 
   protected products = () => [
-    { title: 'Drive Align', price: '$34.99', rating: 5, reviews: 34, image: 'assets/images/drive_align.webp', url: 'https://gentlegatorgolf.com/products/drive-align' },
-    { title: 'Iron Align', price: '$34.99', rating: 5, reviews: 4, image: 'assets/images/Iron_Align.webp', url: 'https://gentlegatorgolf.com/products/iron-align' },
-    { title: 'Putt Align', price: '$49.99', rating: 5, reviews: 4, image: 'assets/images/putt-align.webp', url: 'https://gentlegatorgolf.com/products/test-copy' },
+      { title: 'Drive Align', price: '$34.99', rating: 5, reviews: 34, image: 'assets/images/drive_align.webp', url: 'https://gentlegatorgolf.com/products/drive-align' },
+      { title: 'Iron Align', price: '$34.99', rating: 5, reviews: 4, image: 'assets/images/Iron_Align.webp', url: 'https://gentlegatorgolf.com/products/iron-align' },
+      { title: 'Putt Align', price: '$49.99', rating: 5, reviews: 4, image: 'assets/images/putt-align.webp', url: 'https://gentlegatorgolf.com/products/test-copy' },
     ];
 
   protected displayedVideos = () => {
@@ -96,7 +97,7 @@ export class HomeComponent {
 
   protected onUnlocked(password?: string) {
     this.unlocked = true;
-    if (password === 'FREEVIDEO') {
+    if (password === FREE_VIDEO_PASSWORD) {
       this.freeVideoOnly = true;
     }
   }
