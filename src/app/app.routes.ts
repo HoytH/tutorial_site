@@ -16,6 +16,7 @@ export const routes: Routes = [
   {
     path: 'drive-align',
     canActivate: [authGuard],
+    data: { role: 'all' },
     loadComponent: () =>
       import('./pages/drive-align/drive-align.component').then((m) => m.DriveAlignComponent),
     title: 'Drive Align — Gentle Gator Golf',
@@ -23,6 +24,7 @@ export const routes: Routes = [
   {
     path: 'iron-align',
     canActivate: [authGuard],
+    data: { role: 'iron-align' },
     loadComponent: () =>
       import('./pages/iron-align/iron-align.component').then((m) => m.IronAlignComponent),
     title: 'Iron Align — Gentle Gator Golf',
@@ -30,6 +32,7 @@ export const routes: Routes = [
   {
     path: 'all-videos',
     canActivate: [authGuard],
+    data: { role: 'all' },
     loadComponent: () =>
       import('./pages/all-videos/all-videos.component').then((m) => m.AllVideosComponent),
     title: 'All Tutorials — Gentle Gator Golf',

@@ -97,8 +97,12 @@ export class LoginComponent {
 
   protected submit(): void {
     if (this.#auth.login(this.password)) {
-      const returnUrl = this.#route.snapshot.queryParamMap.get('returnUrl') ?? '/drive-align';
-      this.#router.navigateByUrl(returnUrl);
+      const returnUrl = this.#route.snapshot.queryParamMap.get('returnUrl');
+      if (returnUrl) {
+        this.#router.navigateByUrl(returnUrl);
+      } else {
+        this.#router.navigateByUrl(this.#auth.defaultRoute());
+      }
     } else {
       this.error.set(true);
     }

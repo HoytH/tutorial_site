@@ -1,10 +1,19 @@
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
-import { AuthService } from '../services/auth.service';
+import { AuthService, UserRole } from '../services/auth.service';
 
-export const authGuard: CanActivateFn = (_route, state) => {
+export const authGuard: CanActivateFn = (route, state) => {
   const auth = inject(AuthService);
   const router = inject(Router);
-  if (auth.isLoggedIn()) return true;
-  return router.createUrlTree(['/login'], { queryParams: { returnUrl: state.url } });
+
+  if (!auth.isLoggedIn()) {
+    return router.createUrlTree(['/login'], { queryParams: { returnUrl: state.url } });
+  }
+
+  const required: UserRole = route.data['role'] ?? 'all';
+  if (!auth.hasAccess(required)) {
+    return router.createUrlTree([auth.defaultRoute()]);
+  }
+
+  return true;
 };

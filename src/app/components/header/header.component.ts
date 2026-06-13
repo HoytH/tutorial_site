@@ -20,9 +20,13 @@ import { AuthService } from '../../services/auth.service';
   </a>
   @if (auth.isLoggedIn()) {
     <nav>
-      <a routerLink="/drive-align" routerLinkActive="active">Drive Align</a>
+      @if (auth.role() === 'all') {
+        <a routerLink="/drive-align" routerLinkActive="active">Drive Align</a>
+      }
       <a routerLink="/iron-align" routerLinkActive="active">Iron Align</a>
-      <a routerLink="/all-videos" routerLinkActive="active">All Videos</a>
+      @if (auth.role() === 'all') {
+        <a routerLink="/all-videos" routerLinkActive="active">All Videos</a>
+      }
       <button class="logout-btn" (click)="logout()">Logout</button>
     </nav>
   }

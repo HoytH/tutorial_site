@@ -1,3 +1,8 @@
+def gtin_seed(gtin: str) -> int:
+    """Derive a seed offset from a GS1/GTIN string so products get distinct password spaces."""
+    return sum(int(d) ** 2 for d in gtin)
+
+
 def generate_deterministic_password(order_number_string: str) -> str:
     # Define character sets designed for readability (avoiding 0/O, 1/L, etc.)
     # C: Consonants (21 chars)
@@ -40,30 +45,79 @@ def generate_deterministic_password(order_number_string: str) -> str:
     return password
 
 
+def generate_amazon_password(serial: int, gtin: str) -> str:
+    """Generate a password for an Amazon unit using serial + GS1/GTIN as seed."""
+    C = "BCDFGHJKLMNPQRSTVWXYZ"
+    VN = "AEIOU23456789"
+    PASSWORD_LENGTH = 8
+    password = ""
+
+    serial_str = str(serial)
+    padded = (serial_str * (PASSWORD_LENGTH // len(serial_str) + 1))[:PASSWORD_LENGTH]
+
+    # Combine serial-based seed with GTIN-derived offset so codes are product-specific
+    initial_seed = sum(int(d) ** 2 for d in serial_str) + gtin_seed(gtin)
+    current_seed = initial_seed
+
+    for i in range(PASSWORD_LENGTH):
+        if i % 2 == 0:
+            index = (current_seed + i) % len(C)
+            password += C[index]
+        else:
+            index = (current_seed + i + 1) % len(VN)
+            password += VN[index]
+
+        order_digit = int(padded[i])
+        current_seed = (current_seed * 1664525 + order_digit) % 4294967296
+
+    return password
+
+
 # Example usage:
 if __name__ == "__main__":
     import csv
-    
-    # Generate passwords for orders from 1000 to 10000
+
+    # ── DTC list ──────────────────────────────────────────────────────────────
     start_order = 1000
     end_order = 10000
-    
-    print(f"Generating passwords for orders {start_order} to {end_order}...")
-    
-    # Write to drowssap.csv
+
+    print(f"Generating DTC passwords for orders {start_order} to {end_order}...")
+
     with open('drowssap.csv', 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
-        # Write header
         writer.writerow(['Order Number', 'Password'])
-        # Write data
         for order_num in range(start_order, end_order + 1):
-            order = str(order_num)  # Convert number to string for the password generator
+            order = str(order_num)
             password = generate_deterministic_password(order)
             writer.writerow([order, password])
-            
-            # Print progress every 1000 orders
             if order_num % 1000 == 0:
-                print(f"Progress: {order_num} orders processed...")
-    
-    print(f"\nComplete! {end_order - start_order + 1} passwords have been generated")
-    print("Results have been saved to drowssap.csv")
+                print(f"  Progress: {order_num} orders processed...")
+
+    print(f"DTC complete. Saved to drowssap.csv\n")
+
+    # ── Amazon product lists ───────────────────────────────────────────────────
+    amazon_products = [
+        {
+            'name': 'Iron Align',
+            'gtin': '884400751157',
+            'count': 1000,
+            'filename': 'amazon_iron_align.csv',
+        },
+        # Add more products here, e.g.:
+        # {'name': 'Drive Align', 'gtin': 'XXXXXXXXXXXX', 'count': 1000, 'filename': 'amazon_drive_align.csv'},
+    ]
+
+    for product in amazon_products:
+        gtin = product['gtin']
+        count = product['count']
+        filename = product['filename']
+        print(f"Generating {count} Amazon passwords for {product['name']} (GS1: {gtin})...")
+
+        with open(filename, 'w', newline='') as csvfile:
+            writer = csv.writer(csvfile)
+            writer.writerow(['Serial', 'Password', 'Product', 'GS1'])
+            for serial in range(1, count + 1):
+                password = generate_amazon_password(serial, gtin)
+                writer.writerow([serial, password, product['name'], gtin])
+
+        print(f"  Saved {count} codes to {filename}")
