@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/styles.css"],
+  "sourcesContent": [":root {\n  --primary-green: #2c5f2d;\n  --light-green: #97bc62;\n  --background-color: #f7f9f7;\n  --text-color: #333333;\n  --white: #ffffff;\n  --border-radius: 8px;\n  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);\n}\n\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nhtml,\nbody {\n  height: 100%;\n}\n\nbody {\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica,\n    Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\";\n  background-color: var(--background-color);\n  color: var(--text-color);\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\nmain {\n  padding: 2rem 1rem;\n  max-width: 1200px;\n  margin: 0 auto;\n}\n\nh1, h2, h3 {\n  color: var(--primary-green);\n  margin-bottom: 1rem;\n}\n\np {\n  line-height: 1.6;\n}\n"],
+  "mappings": ";AAAA;AACE,mBAAiB;AACjB,iBAAe;AACf,sBAAoB;AACpB,gBAAc;AACd,WAAS;AACT,mBAAiB;AACjB,gBAAc,EAAE,IAAI,IAAI,KAAK,CAAC,EAAE,CAAC,EAAE,CAAC,EAAE;AACxC;AAEA;AACE,cAAY;AACZ,UAAQ;AACR,WAAS;AACX;AAEA;AACA;AACE,UAAQ;AACV;AAEA;AACE;AAAA,IAAa,aAAa;AAAA,IAAE,kBAAkB;AAAA,IAAE,UAAU;AAAA,IAAE,MAAM;AAAA,IAAE,SAAS;AAAA,IAC3E,KAAK;AAAA,IAAE,UAAU;AAAA,IAAE,mBAAmB;AAAA,IAAE,gBAAgB;AAAA,IAAE;AAC5D,oBAAkB,IAAI;AACtB,SAAO,IAAI;AACX,0BAAwB;AACxB,2BAAyB;AAC3B;AAEA;AACE,WAAS,KAAK;AACd,aAAW;AACX,UAAQ,EAAE;AACZ;AAEA;AAAI;AAAI;AACN,SAAO,IAAI;AACX,iBAAe;AACjB;AAEA;AACE,eAAa;AACf;",
+  "names": []
+}

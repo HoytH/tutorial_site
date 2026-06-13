@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["angular:styles/component:css;1c80f315eab5c105d9895d4ce4720766f9bc46f3e9156263224bf0e9dc2b3084;/home/hoyt/code/tutorial_site_HH/src/app/app.component.ts"],
+  "sourcesContent": ["\n    :host {\n      display: flex;\n      flex-direction: column;\n      min-height: 100vh;\n    }\n\n    main {\n      flex: 1;\n    }\n  "],
+  "mappings": ";AACI;AACE,WAAS;AACT,kBAAgB;AAChB,cAAY;AACd;AAEA;AACE,QAAM;AACR;",
+  "names": []
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["angular:styles/component:css;8013f717ba6ace7e3eb97aee0f76a061f443dd5326a782e848cec7bb810c3e58;/home/hoyt/code/tutorial_site_HH/src/app/pages/all-videos/all-videos.component.ts"],
+  "sourcesContent": ["\n    .hero {\n      text-align: center;\n      padding: 2rem 1rem;\n      background-color: var(--white);\n      border-radius: var(--border-radius);\n      margin-bottom: 2rem;\n    }\n\n    .category-section {\n      margin-bottom: 3rem;\n    }\n\n    .category-section h2 {\n      color: var(--primary-green);\n      margin-bottom: 1.25rem;\n      font-size: 1.5rem;\n    }\n\n    .video-grid {\n      display: grid;\n      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));\n      gap: 1.5rem;\n    }\n  "],
+  "mappings": ";AACI,CAAC;AACC,cAAY;AACZ,WAAS,KAAK;AACd,oBAAkB,IAAI;AACtB,iBAAe,IAAI;AACnB,iBAAe;AACjB;AAEA,CAAC;AACC,iBAAe;AACjB;AAEA,CAJC,iBAIiB;AAChB,SAAO,IAAI;AACX,iBAAe;AACf,aAAW;AACb;AAEA,CAAC;AACC,WAAS;AACT,yBAAuB,OAAO,SAAS,EAAE,OAAO,KAAK,EAAE;AACvD,OAAK;AACP;",
+  "names": []
+}

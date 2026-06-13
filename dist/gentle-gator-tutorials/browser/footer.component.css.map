@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["angular:styles/component:css;bf07f54b6656966879b38f0f77573b4a9910d04d8753f6214365d1d1d95ef26f;/home/hoyt/code/tutorial_site_HH/src/app/components/footer/footer.component.ts"],
+  "sourcesContent": ["\n    footer {\n      padding: 2rem;\n      text-align: center;\n      background-color: var(--primary-green);\n      color: var(--white);\n      margin-top: auto;\n    }\n  "],
+  "mappings": ";AACI;AACE,WAAS;AACT,cAAY;AACZ,oBAAkB,IAAI;AACtB,SAAO,IAAI;AACX,cAAY;AACd;",
+  "names": []
+}

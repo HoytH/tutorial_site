@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["angular:styles/component:css;c81f4861ccd67591c53f4a1ce5f6c2b342200bd8c5340599e195db6bf2b71388;/home/hoyt/code/tutorial_site_HH/src/app/pages/iron-align/iron-align.component.ts"],
+  "sourcesContent": ["\n    .hero {\n      text-align: center;\n      padding: 2rem 1rem;\n      background-color: var(--white);\n      border-radius: var(--border-radius);\n      margin-bottom: 2rem;\n    }\n\n    .video-grid {\n      display: grid;\n      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));\n      gap: 1.5rem;\n    }\n  "],
+  "mappings": ";AACI,CAAC;AACC,cAAY;AACZ,WAAS,KAAK;AACd,oBAAkB,IAAI;AACtB,iBAAe,IAAI;AACnB,iBAAe;AACjB;AAEA,CAAC;AACC,WAAS;AACT,yBAAuB,OAAO,SAAS,EAAE,OAAO,KAAK,EAAE;AACvD,OAAK;AACP;",
+  "names": []
+}

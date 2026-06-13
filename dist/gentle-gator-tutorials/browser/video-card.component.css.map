@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["angular:styles/component:css;6bcd651876837f05af8ddfe9849c062b45da8d577cb9e1185855be37e6b19dce;/home/hoyt/code/tutorial_site_HH/src/app/components/video-card/video-card.component.ts"],
+  "sourcesContent": ["\n    .video-card {\n      background: var(--white);\n      border-radius: var(--border-radius);\n      box-shadow: var(--box-shadow);\n      padding: 1.5rem;\n      overflow: hidden;\n    }\n\n    .video-container {\n      position: relative;\n      padding-bottom: 56.25%; /* 16:9 aspect ratio */\n      height: 0;\n      overflow: hidden;\n      margin-top: 1rem;\n      border-radius: var(--border-radius);\n    }\n\n    .video-container iframe {\n      position: absolute;\n      top: 0;\n      left: 0;\n      width: 100%;\n      height: 100%;\n    }\n  "],
+  "mappings": ";AACI,CAAC;AACC,cAAY,IAAI;AAChB,iBAAe,IAAI;AACnB,cAAY,IAAI;AAChB,WAAS;AACT,YAAU;AACZ;AAEA,CAAC;AACC,YAAU;AACV,kBAAgB;AAChB,UAAQ;AACR,YAAU;AACV,cAAY;AACZ,iBAAe,IAAI;AACrB;AAEA,CATC,gBASgB;AACf,YAAU;AACV,OAAK;AACL,QAAM;AACN,SAAO;AACP,UAAQ;AACV;",
+  "names": []
+}
