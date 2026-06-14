@@ -38,6 +38,12 @@ export const routes: Routes = [
     title: 'All Tutorials — Gentle Gator Golf',
   },
   {
+    path: 'qr/:token',
+    loadComponent: () =>
+      import('./pages/qr-login/qr-login.component').then((m) => m.QrLoginComponent),
+    title: 'Gentle Gator Golf',
+  },
+  {
     path: '**',
     redirectTo: 'login',
   },
